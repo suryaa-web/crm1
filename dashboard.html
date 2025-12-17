@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="profile-container">
+
+    <!-- LEFT SIDEBAR -->
+    <div class="sidebar">
+        <div class="profile-pic">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+        </div>
+
+        <h3 class="username">{{ current_user.username }}</h3>
+
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Setting</a></li>
+            <li><a href="{{ url_for('logout') }}">Signout</a></li>
+        </ul>
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="main-content">
+
+        <!-- About Section -->
+        <div class="card-box">
+            <h2>About</h2>
+
+            <div class="row-box">
+                <span class="label">Full Name</span>
+                <span class="value">{{ customer.first_name }} {{ customer.last_name }}</span>
+            </div>
+
+            <div class="row-box">
+                <span class="label">Email</span>
+                <span class="value">{{ customer.email }}</span>
+            </div>
+
+            <div class="row-box">
+                <span class="label">Phone</span>
+                <span class="value">{{ customer.phone }}</span>
+            </div>
+
+            <div class="row-box">
+                <span class="label">Address</span>
+                <span class="value">{{ customer.address }}</span>
+            </div>
+        </div>
+
+        <!-- Recent Projects (Optional) -->
+        <div class="card-box">
+            <h2>Recent Projects</h2>
+            <p style="opacity:0.6">Add any content here...</p>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
